@@ -1,0 +1,491 @@
+@font-face {
+	font-family: 'helium';
+	src:url('../fonts/helium.eot?bgytse');
+	src:url('../fonts/helium.eot?#iefixbgytse') format('embedded-opentype'),
+		url('../fonts/helium.woff?bgytse') format('woff'),
+		url('../fonts/helium.ttf?bgytse') format('truetype'),
+		url('../fonts/helium.svg?bgytse#helium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icon {
+	font-family: 'helium';
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.icon2:before {
+	font-family: 'helium';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	font-size: 2em;
+	display: inline-block;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zip:before {
+	content: "\e600";
+	font-style: normal;
+}
+.icon-camera:before {
+	content: "\e601";
+	font-style: normal;
+}
+.icon-texttool:before {
+	content: "\e602";
+	font-style: normal;
+}
+.icon-text:before {
+	content: "\e603";
+	font-style: normal;
+}
+.icon-table:before {
+	content: "\e604";
+	font-style: normal;
+}
+.icon-presentation:before {
+	content: "\e605";
+	font-style: normal;
+}
+.icon-design:before {
+	content: "\e606";
+	font-style: normal;
+}
+.icon-web:before {
+	content: "\e607";
+	font-style: normal;
+}
+.icon-gamepad:before {
+	content: "\e608";
+	font-style: normal;
+}
+.icon-calculator:before {
+	content: "\e609";
+	font-style: normal;
+}
+.icon-keyboard:before {
+	content: "\e60a";
+	font-style: normal;
+}
+.icon-desktop:before {
+	content: "\e60b";
+	font-style: normal;
+}
+.icon-mobile:before {
+	content: "\e60c";
+	font-style: normal;
+}
+.icon-mouse:before {
+	content: "\e60d";
+	font-style: normal;
+}
+.icon-watch:before {
+	content: "\e60e";
+	font-style: normal;
+}
+.icon-printer:before {
+	content: "\e60f";
+	font-style: normal;
+}
+.icon-arrow:before {
+	content: "\e610";
+	font-style: normal;
+}
+.icon-coding:before {
+	content: "\e611";
+	font-style: normal;
+}
+.icon-quote:before {
+	content: "\e612";
+	font-style: normal;
+}
+.icon-trash:before {
+	content: "\e613";
+	font-style: normal;
+}
+.icon-magnet:before {
+	content: "\e614";
+	font-style: normal;
+}
+.icon-ruller:before {
+	content: "\e615";
+	font-style: normal;
+}
+.icon-crop:before {
+	content: "\e616";
+	font-style: normal;
+}
+.icon-magic:before {
+	content: "\e617";
+	font-style: normal;
+}
+.icon-brush:before {
+	content: "\e618";
+	font-style: normal;
+}
+.icon-pentool:before {
+	content: "\e619";
+	font-style: normal;
+}
+.icon-hand:before {
+	content: "\e61a";
+	font-style: normal;
+}
+.icon-picture:before {
+	content: "\e61b";
+	font-style: normal;
+}
+.icon-icecream:before {
+	content: "\e61c";
+	font-style: normal;
+}
+.icon-pizza:before {
+	content: "\e61d";
+	font-style: normal;
+}
+.icon-cocktail:before {
+	content: "\e61e";
+	font-style: normal;
+}
+.icon-doughnut:before {
+	content: "\e61f";
+	font-style: normal;
+}
+.icon-burger:before {
+	content: "\e620";
+	font-style: normal;
+}
+.icon-coffee:before {
+	content: "\e621";
+	font-style: normal;
+}
+.icon-chicken:before {
+	content: "\e622";
+	font-style: normal;
+}
+.icon-minimize:before {
+	content: "\e623";
+	font-style: normal;
+}
+.icon-maximize:before {
+	content: "\e624";
+	font-style: normal;
+}
+.icon-stop:before {
+	content: "\e625";
+	font-style: normal;
+}
+.icon-forwards:before {
+	content: "\e626";
+	font-style: normal;
+}
+.icon-backwards:before {
+	content: "\e627";
+	font-style: normal;
+}
+.icon-pause:before {
+	content: "\e628";
+	font-style: normal;
+}
+.icon-play:before {
+	content: "\e629";
+	font-style: normal;
+}
+.icon-webcam:before {
+	content: "\e62a";
+	font-style: normal;
+}
+.icon-cc:before {
+	content: "\e62b";
+	font-style: normal;
+}
+.icon-hd:before {
+	content: "\e62c";
+	font-style: normal;
+}
+.icon-bell:before {
+	content: "\e62d";
+	font-style: normal;
+}
+.icon-playlist:before {
+	content: "\e62e";
+	font-style: normal;
+}
+.icon-refresh:before {
+	content: "\e62f";
+	font-style: normal;
+}
+.icon-random:before {
+	content: "\e630";
+	font-style: normal;
+}
+.icon-mic:before {
+	content: "\e631";
+	font-style: normal;
+}
+.icon-volumeoff:before {
+	content: "\e632";
+	font-style: normal;
+}
+.icon-volumeon:before {
+	content: "\e633";
+	font-style: normal;
+}
+.icon-equalizer:before {
+	content: "\e634";
+	font-style: normal;
+}
+.icon-video:before {
+	content: "\e635";
+	font-style: normal;
+}
+.icon-headphones:before {
+	content: "\e636";
+	font-style: normal;
+}
+.icon-music:before {
+	content: "\e637";
+	font-style: normal;
+}
+.icon-ring:before {
+	content: "\e638";
+	font-style: normal;
+}
+.icon-diamond:before {
+	content: "\e639";
+	font-style: normal;
+}
+.icon-crown:before {
+	content: "\e63a";
+	font-style: normal;
+}
+.icon-cup:before {
+	content: "\e63b";
+	font-style: normal;
+}
+.icon-medal:before {
+	content: "\e63c";
+	font-style: normal;
+}
+.icon-flash:before {
+	content: "\e63d";
+	font-style: normal;
+}
+.icon-rocket:before {
+	content: "\e63e";
+	font-style: normal;
+}
+.icon-hanger:before {
+	content: "\e63f";
+	font-style: normal;
+}
+.icon-pants:before {
+	content: "\e640";
+	font-style: normal;
+}
+.icon-glasses:before {
+	content: "\e641";
+	font-style: normal;
+}
+.icon-sox:before {
+	content: "\e642";
+	font-style: normal;
+}
+.icon-hat:before {
+	content: "\e643";
+	font-style: normal;
+}
+.icon-tie:before {
+	content: "\e644";
+	font-style: normal;
+}
+.icon-tshirt:before {
+	content: "\e645";
+	font-style: normal;
+}
+.icon-home:before {
+	content: "\e646";
+	font-style: normal;
+}
+.icon-confirm:before {
+	content: "\e647";
+	font-style: normal;
+}
+.icon-delete:before {
+	content: "\e648";
+	font-style: normal;
+}
+.icon-plus:before {
+	content: "\e649";
+	font-style: normal;
+}
+.icon-next:before {
+	content: "\e64a";
+	font-style: normal;
+}
+.icon-back:before {
+	content: "\e64b";
+	font-style: normal;
+}
+.icon-list:before {
+	content: "\e64c";
+	font-style: normal;
+}
+.icon-menu:before {
+	content: "\e64d";
+	font-style: normal;
+}
+.icon-diagram:before {
+	content: "\e64e";
+	font-style: normal;
+}
+.icon-eye:before {
+	content: "\e64f";
+	font-style: normal;
+}
+.icon-download:before {
+	content: "\e650";
+	font-style: normal;
+}
+.icon-upload:before {
+	content: "\e651";
+	font-style: normal;
+}
+.icon-compass:before {
+	content: "\e652";
+	font-style: normal;
+}
+.icon-rating:before {
+	content: "\e653";
+	font-style: normal;
+}
+.icon-notepad:before {
+	content: "\e654";
+	font-style: normal;
+}
+.icon-document:before {
+	content: "\e655";
+	font-style: normal;
+}
+.icon-settings:before {
+	content: "\e656";
+	font-style: normal;
+}
+.icon-boy:before {
+	content: "\e657";
+	font-style: normal;
+}
+.icon-girl:before {
+	content: "\e658";
+	font-style: normal;
+}
+.icon-folder:before {
+	content: "\e659";
+	font-style: normal;
+}
+.icon-group:before {
+	content: "\e65a";
+	font-style: normal;
+}
+.icon-pin:before {
+	content: "\e65b";
+	font-style: normal;
+}
+.icon-smile:before {
+	content: "\e65c";
+	font-style: normal;
+}
+.icon-send:before {
+	content: "\e65d";
+	font-style: normal;
+}
+.icon-timer:before {
+	content: "\e65e";
+	font-style: normal;
+}
+.icon-edit:before {
+	content: "\e65f";
+	font-style: normal;
+}
+.icon-cart:before {
+	content: "\e660";
+	font-style: normal;
+}
+.icon-key:before {
+	content: "\e661";
+	font-style: normal;
+}
+.icon-share:before {
+	content: "\e662";
+	font-style: normal;
+}
+.icon-lock:before {
+	content: "\e663";
+	font-style: normal;
+}
+.icon-unlock:before {
+	content: "\e664";
+	font-style: normal;
+}
+.icon-present:before {
+	content: "\e665";
+	font-style: normal;
+}
+.icon-message:before {
+	content: "\e666";
+	font-style: normal;
+}
+.icon-about:before {
+	content: "\e667";
+	font-style: normal;
+}
+.icon-flag:before {
+	content: "\e668";
+	font-style: normal;
+}
+.icon-exit:before {
+	content: "\e669";
+	font-style: normal;
+}
+.icon-lamp:before {
+	content: "\e66a";
+	font-style: normal;
+}
+.icon-calendar:before {
+	content: "\e66b";
+	font-style: normal;
+}
+.icon-search:before {
+	content: "\e66c";
+	font-style: normal;
+}
+.icon-star:before {
+	content: "\e66d";
+	font-style: normal;
+}
+.icon-heart:before {
+	content: "\e66e";
+	font-style: normal;
+}
+.icon-unlike:before {
+	content: "\e66f";
+	font-style: normal;
+}
+.icon-like:before {
+	content: "\e670";
+	font-style: normal;
+}
