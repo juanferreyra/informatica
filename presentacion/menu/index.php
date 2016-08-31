@@ -43,6 +43,7 @@ $vector = array(
 24 => "Eres tan inteligente ¿Cómo haces para siempre tener las respuestas a mis preguntas?",
 25 => "Eres un hombre muy interesante. Sabes mucho sobre todo.",
 26 => "Eres tan tierno y dulce que me haces sentir como a una gatita mimada.",
+27 => "Mujeres solteras buscan sexo en tu zona. Ojito que soy yo sola nomas.",
 );
 
 // Obtenemos un número aleatorio
