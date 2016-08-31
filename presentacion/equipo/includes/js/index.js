@@ -107,7 +107,7 @@ $(document).ready(function(){
         datatype: "json",
         colNames:['Nro','Detalle','Sector','Hospital','Componentes','',''],
         colModel:[ 
-            {name:'id', index:'p.id',width:'30%',align:"left",fixed:true,editable:false },
+            {name:'id', index:'e.id',width:'50%',align:"left",fixed:true,editable:false },
             {name:'detalle', index:'e.detalle',width:'100%',align:"left",fixed:true,editable:true , editrules: { custom: true, custom_func: checkValidMAC }},
             {name:'tipo_detalle', index:'s.detalle',width:'100%',align:"left",fixed:true, editable:true, edittype:"select",
                 editoptions:{
@@ -115,7 +115,7 @@ $(document).ready(function(){
                 }
             },
             {name:'tipo_hospital', index:'h.detalle_corto',width:'100%',align:"left",fixed:true, editable:false },
-            {name:'componentes', index:'p.componentes',width:'200%',align:"left",fixed:true, editable:false },
+            {name:'componentes', index:'p.componentes',width:'200%',align:"left",fixed:true, editable:false, search: false },
             {name:'act',index:'act', width:'100%', sortable:false,align:"center",search:false, fixed:true,editable:false},
             {name: 'myac', width: '40%', fixed: true, sortable: false, resize: false, formatter: 'actions', search: false,
                 formatoptions:{
