@@ -48,7 +48,7 @@ $(document).ready(function(){
 <!-- /Titulo-->
 <hr>
 <form method="post" name="formEquipo" id="formEquipo" >
-    <input type="text" name="detalle" id="detalle" placeholder="Nombre del equipo" /><br/><br/>
+    <input type="text" name="detalle" id="detalle" placeholder="Mac del equipo" /><br/><br/>
     <select name="idsector" id="idsector">
         <option value="">Seleccione un sector</option>
         <?php

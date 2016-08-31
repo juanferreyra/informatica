@@ -32,11 +32,16 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<div data-role="content">
+<div data-role="content" align="center">
 <form>
-<input type="hidden" name="msg" id="msg" rows="10" cols="40" value="<?=$textQr?>">
+<input type="hidden" name="msg" id="msg" value="<?=$textQr?>">
 </form>
+<?php
+echo $textQr;
+?>
+<hr>
 <div id="qr"></div>
+<hr>
 <button class='button-secondary' id="imprimirQr">Imprimir</button>
 </div>
 </body>

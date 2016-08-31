@@ -3,6 +3,7 @@
 include_once '../../namespacesAdress.php';
 include_once negocio.'usuario.class.php';
 include_once datos.'usuarioDatabaseLinker.class.php';
+include_once datos.'sectorDatabaseLinker.class.php';
 
 session_start();
 
@@ -19,6 +20,9 @@ $data = unserialize($usuario);
 
 $db = new UsuarioDatabaseLinker();
 
+$dbSector = new SectorDatabaseLinker();
+
+$sectores = $dbSector->getSectores();
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,8 +47,22 @@ $db = new UsuarioDatabaseLinker();
     <script type="text/javascript" src="../includes/plug-in/jqGrid_5.0.2/js/jquery.jqGrid.min.js" ></script>
     <script type="text/javascript" src="includes/js/index.js"></script>
     <script type="text/javascript">
+        <?php
+            $text = "value='";
+
+            for ($i=0; $i < count($sectores); $i++) {
+                $text.=$sectores[$i]->getId().":".$sectores[$i]->getDetalle()." ".$sectores[$i]->getHospital();
+                if($i!=count($sectores)-1){
+                    $text.=";";
+                }
+            }
+
+            $text.="'";
+        ?>
+
         var icono = <?php echo "'".$data->getLogo()."'"; ?>;
         var iconoDetalle = <?php echo "'".$data->getLogoDetalle()."'"; ?>;
+        var sectoresLista = <?php echo $text; ?>;
     </script>
 </head>
 <body>
@@ -70,7 +88,7 @@ $db = new UsuarioDatabaseLinker();
             <p align="center">Lista de equipos</p>
             <table id="jgVerEquipos"></table>
             <div id="jqEquiposfoot"></div>
-            <input class="button-secondary" type="submit" value="Nuevo Equipo" id="nuevoEquipo" data-dialog="somedialog" >
+            <input class="button-secondary" type="submit" value="Nuevo Equipo" id="nuevoEquipo" data-dialog="somedialog">
             <input type="submit"  data-dialogo="somedialog2" id="qrBtn" style='display:none;'>
         </div>
     </div>

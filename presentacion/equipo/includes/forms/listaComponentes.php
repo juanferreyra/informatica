@@ -16,7 +16,7 @@ $componentes = $dbComponente->getComponentes();
 
 $(document).ready(function(){
 
-    $("#jqVerComponentesEnEquipo").jqGrid({ 
+    $("#jqVerComponentesEnEquipo").jqGrid({
         url:'includes/ajaxFunctions/verComponentesEnEquipo.php?idequipo='+<?=$idequipo?>, 
         mtype: "POST",
         datatype: "json",
@@ -61,33 +61,31 @@ $(document).ready(function(){
 
     $('#agregarComponente').click(function(event){
         event.preventDefault();
-        if(validar()){
-            $.ajax({
-                data: $("#formAgrComponente").serialize(),
-                type: "POST",
-                dataType: "json",
-                url: "includes/ajaxFunctions/agregarComponenteDeEquipo.php?idequipo="+<?=$idequipo?>,
-                success: function(data)
+        $.ajax({
+            data: $("#formAgrComponente").serialize(),
+            type: "POST",
+            dataType: "json",
+            url: "includes/ajaxFunctions/agregarComponenteDeEquipo.php?idequipo="+<?=$idequipo?>,
+            success: function(data)
+            {
+                //NOTIFICACION
+                // create the notification
+                var notification = new NotificationFx({
+                    message : '<div class="ns-thumb"><img src="../includes/plug-in/notificacion/img/'+icono+'"/></div><div class="ns-content"><p><a href="#">'+iconoDetalle+'&nbsp;</a>'+data.message+'</p></div>',
+                    layout : 'other',
+                    ttl : 6000,
+                    effect : 'thumbslider',
+                    type : 'notice'
+                });
+                // show the notification
+                notification.show();
+                //NOTIFICACION
+                if(data.result)
                 {
-                    //NOTIFICACION
-                    // create the notification
-                    var notification = new NotificationFx({
-                        message : '<div class="ns-thumb"><img src="../includes/plug-in/notificacion/img/'+icono+'"/></div><div class="ns-content"><p><a href="#">'+iconoDetalle+'&nbsp;</a>'+data.message+'</p></div>',
-                        layout : 'other',
-                        ttl : 6000,
-                        effect : 'thumbslider',
-                        type : 'notice'
-                    });
-                    // show the notification
-                    notification.show();
-                    //NOTIFICACION
-                    if(data.result)
-                    {
-                        $('#jqVerComponentesEnEquipo').trigger("reloadGrid");
-                    }
+                    $('#jqVerComponentesEnEquipo').trigger("reloadGrid");
                 }
-            });
-        }
+            }
+        });
     });
 
     $('#guardarEquipoFooter').click(function(){
@@ -116,7 +114,7 @@ $(document).ready(function(){
 <!-- /Titulo-->
 <hr>
     <label>Nro:</label><?=$equipo->getId()?><br>
-    <label>Equipo:</label><?=$equipo->getDetalle()?><br>
+    <label>MAC Address Equipo:</label><?=$equipo->getDetalle()?><br>
     <label>Sector:</label><?=$equipo->getSector()->getDetalle()." ".$equipo->getSector()->getHospital()?><br>
 <hr>
 <h2>

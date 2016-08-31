@@ -1612,10 +1612,10 @@ var qrcode = function() {
 		img += base64;
 		img += '"';
 		img += '\u0020width="';
-		img += width;
+		img += 100;//width;
 		img += '"';
 		img += '\u0020height="';
-		img += height;
+		img += 100;//height;
 		img += '"';
 		if (alt) {
 			img += '\u0020alt="';

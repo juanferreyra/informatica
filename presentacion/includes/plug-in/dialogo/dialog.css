@@ -91,6 +91,7 @@
 }
 
 .dialog button{
+	cursor:pointer;
 	padding: 5px;
 	outline: none;
 	font-weight: 600;

@@ -483,5 +483,89 @@ class EquipoDatabaseLinker
         return json_encode($response);
     }
 
+    public function eliminarEquipo($id, $idusuario)
+    {
+        $query="UPDATE
+                    equipo
+                SET
+                    habilitado = false,
+                    idusuario = $idusuario
+                WHERE
+                    id = $id;";
+        try
+        {
+            $this->dbinformatica->conectar();
+            $this->dbinformatica->ejecutarAccion($query);    
+        }
+        catch (Exception $e)
+        {
+            $this->dbinformatica->desconectar();
+            return false;
+        }
+        $this->dbinformatica->desconectar();
 
+        return true;
+    }
+
+    public function eliminarEquipo2($id, $idusuario)
+    {
+        $response = new stdClass();
+        
+        $query="UPDATE
+                    equipo
+                SET
+                    habilitado = false,
+                    idusuario = $idusuario
+                WHERE
+                    id = $id;";
+
+        try
+        {
+            $this->dbinformatica->conectar();
+            $this->dbinformatica->ejecutarAccion($query);
+            $response->message = "Equipo Eliminado";
+            $response->ret = true;
+        }
+        catch (Exception $e)
+        {
+            $this->dbinformatica->desconectar();
+            $response->message = "Ocurrio un error eliminando el equipo, Lindura!";
+            $response->ret = false;
+        }
+
+        $this->dbinformatica->desconectar();
+
+        return $response;
+    }
+
+    public function modificarEquipo($data, $idusuario)
+    {
+        $response = new stdClass();
+
+        $query="UPDATE
+                    equipo
+                SET
+                    detalle='".$data['detalle']."',
+                    idsector=".Utils::phpIntToSQL($data['tipo_detalle']).",
+                    idusuario=".Utils::phpIntToSQL($idusuario)."
+                WHERE
+                    id=".Utils::phpIntToSQL($data['id']).";";
+        try
+        {
+            $this->dbinformatica->conectar();
+            $this->dbinformatica->ejecutarAccion($query);
+            $response->message = "Equipo Modificado";
+            $response->ret = true;
+
+        }
+        catch (Exception $e)
+        {
+            $this->dbinformatica->desconectar();
+            $response->message = "Ocurrio un error modificando el equipo.";
+            $response->ret = false;
+        }
+        $this->dbinformatica->desconectar();
+
+        return $response;
+    }
 }
