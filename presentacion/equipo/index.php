@@ -93,6 +93,7 @@ $sectores = $dbSector->getSectores();
         </div>
     </div>
 
+
     <!--dialogo 1 -->
     <div id="somedialog" class="dialog">
       <div class="dialog__overlay">

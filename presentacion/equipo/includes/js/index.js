@@ -61,18 +61,27 @@ function validar()
     }
 }
 
-function isValidMac(mac) {
-  var a = mac.split(':');
-  if (a.length !== 6) {
-    return false;
-  }
-  for (var i=0; i<6; i++) {
-    var s = "0x"+a[i];
-    if (s>>0 === 0 || s.length != 4) {
-      return false;
+function isValidMac(mac){
+    var pattern = /^([0-9A-Fa-f]{2}[:]){5}([0-9A-Fa-f]{2})$/;
+
+    if(!pattern.test(mac)) {
+        return false;
+    } else {
+        return true;
     }
-  }
-  return true;
+}
+
+function existeMac(mac) {
+    $.ajax({
+        data: "macAdres="+mac,
+        type: "POST",
+        dataType: "json",
+        url: "includes/ajaxFunctions/existeMac.php",
+        success: function(data)
+        {
+            return data.result;
+        }
+    });
 }
 
 checkValidMAC = function (value, colname) {
@@ -105,10 +114,15 @@ $(document).ready(function(){
         url:'includes/ajaxFunctions/verEquipos.php',
         mtype: "POST",
         datatype: "json",
-        colNames:['Nro','Detalle','Sector','Hospital','Componentes','',''],
+        colNames:['Nro','MAC Address','Sector','Hospital','Componentes','',''],
         colModel:[ 
             {name:'id', index:'e.id',width:'50%',align:"left",fixed:true,editable:false },
-            {name:'detalle', index:'e.detalle',width:'100%',align:"left",fixed:true,editable:true , editrules: { custom: true, custom_func: checkValidMAC }},
+            {name:'detalle', index:'e.detalle',width:'100%',align:"left",fixed:true,editable:true, 
+                editrules: { 
+                    custom: true, 
+                    custom_func: checkValidMAC 
+                }
+            },
             {name:'tipo_detalle', index:'s.detalle',width:'100%',align:"left",fixed:true, editable:true, edittype:"select",
                 editoptions:{
                     value: sectoresLista
@@ -131,8 +145,8 @@ $(document).ready(function(){
         rowNum: true,
         viewrecords: true,
         altRows: true,
-        caption: "Equipos",
-        rowNum: 20, 
+        caption: "<a href='includes/ajaxFunctions/equiposToExcel.php' >Exportar Excel</a>",
+        rowNum: 20,
         rowList: [10,20,30,50],
         pager: '#jqEquiposfoot',
         sortname: 'id',
@@ -141,7 +155,7 @@ $(document).ready(function(){
         width: '100%',
         height: '100%',
         gridComplete: function()
-        { 
+        {
             var ids = jQuery("#jgVerEquipos").jqGrid('getDataIDs');
             for(var i=0;i < ids.length;i++)
             {
