@@ -90,6 +90,7 @@ $sectores = $dbSector->getSectores();
             <div id="jqEquiposfoot"></div>
             <input class="button-secondary" type="submit" value="Nuevo Equipo" id="nuevoEquipo" data-dialog="somedialog">
             <input type="submit"  data-dialogo="somedialog2" id="qrBtn" style='display:none;'>
+            <input type="submit"  data-dialogoo="somedialog3" id="verBtn" style='display:none;'>
         </div>
     </div>
 
@@ -116,6 +117,17 @@ $sectores = $dbSector->getSectores();
             </div>
         </div>
     </div>
+    <!--dialogo 3 -->
+    <div id="somedialog3" class="dialog">
+        <div class="dialog__overlay">
+        </div>
+        <div class="dialog__content">
+            <button id="somedialog3-close" class="action" data-dialog-close>X</button>
+            <div id="dialog_subcontent3">
+
+            </div>
+        </div>
+    </div>
 
     <div name="loader" style="display:none;">Cargando...</div>
     <script type="text/javascript" src="../includes/plug-in/dialogo/dialogFx.js" ></script>
@@ -133,7 +145,7 @@ $sectores = $dbSector->getSectores();
 
               dlg = new DialogFx( somedialog );
 
-            dlgtrigger.addEventListener( 'click', dlg.toggle.bind(dlg),$("#dialog_subcontent").load("includes/forms/formularioEquipo.php"));
+            dlgtrigger.addEventListener( 'click', dlg.toggle.bind(dlg) );
 
             var dlgtrigger = document.querySelector( '[data-dialogo]' ),
 
@@ -142,6 +154,14 @@ $sectores = $dbSector->getSectores();
                 dlg2 = new DialogFx( somedialog2 );
 
             dlgtrigger.addEventListener( 'click', dlg.toggle.bind(dlg2) );
+
+            var dlgtrigger = document.querySelector( '[data-dialogoo]' ),
+
+                somedialog2 = document.getElementById( dlgtrigger.getAttribute( 'data-dialogoo' ) ),
+
+                dlg3 = new DialogFx( somedialog3 );
+
+            dlgtrigger.addEventListener( 'click', dlg.toggle.bind(dlg3) );
 
         })();
     </script>

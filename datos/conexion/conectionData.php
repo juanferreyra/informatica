@@ -1,8 +1,8 @@
 <?php
 
-define("HOSTLocal", '192.168.253.102');
+define("HOSTLocal", 'localhost');
 define("DB", 'informatica');
-define("USRDBAdmin", 'sissalud');
-define("PASSDBAdmin", 's20s05');
+define("USRDBAdmin", 'root');
+define("PASSDBAdmin", 'f0rm4t1c4');
 
 ?>

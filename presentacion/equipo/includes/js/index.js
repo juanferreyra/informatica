@@ -71,21 +71,9 @@ function isValidMac(mac){
     }
 }
 
-function existeMac(mac) {
-    $.ajax({
-        data: "macAdres="+mac,
-        type: "POST",
-        dataType: "json",
-        url: "includes/ajaxFunctions/existeMac.php",
-        success: function(data)
-        {
-            return data.result;
-        }
-    });
-}
-
 checkValidMAC = function (value, colname) {
     if (isValidMac(value)) {
+        /*validar que no exista la mac en otra*/
         return [true];
     } else {
         return [false, "La mac es invalida. Debe tener la pinta 02:42:a0:52:7b:90"];
@@ -94,8 +82,8 @@ checkValidMAC = function (value, colname) {
 
 function verEquipo(id)
 {
-    $("#dialog_subcontent").load("includes/forms/listaComponentes.php",{equipo:id});
-    $("#nuevoEquipo").click();
+    $("#dialog_subcontent3").load("includes/forms/listaComponentes.php",{equipo:id});
+    $("#verBtn").click();
 }
 
 function verQR(id)
@@ -106,7 +94,7 @@ function verQR(id)
 
 $(document).ready(function(){
 
-     $('#nuevoEquipo').click(function(){
+    $('#nuevoEquipo').click(function(){
         $("#dialog_subcontent").load("includes/forms/formularioEquipo.php")
     });
 
@@ -138,6 +126,21 @@ $(document).ready(function(){
                     editbutton: true,
                     onError: function(_, xhr) {
                         alert(xhr.responseText);
+                    },
+                    onSave: function(xhr) {
+                        //NOTIFICACION
+                        // create the notification
+                        var notification = new NotificationFx({
+                            message : '<div class="ns-thumb"><img src="../includes/plug-in/notificacion/img/'+icono+'"/></div><div class="ns-content"><p><a href="#">'+iconoDetalle+'&nbsp;</a>'+responseText+'!.</p></div>',
+                            layout : 'other',
+                            ttl : 6000,
+                            effect : 'thumbslider',
+                            type : 'notice'
+                        });
+                        // show the notification
+                        notification.show();
+                        //NOTIFICACION
+                        return false;
                     }
                 }
             }

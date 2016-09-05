@@ -26,7 +26,8 @@ class ComponenteDatabaseLinker
                 FROM
                     componente
                 WHERE
-                    habilitado=true;";
+                    habilitado=true
+                ORDER BY detalle ASC;";
 
         try
         {

@@ -102,7 +102,7 @@ $(document).ready(function(){
         notification.show();
         //NOTIFICACION
         $('#jgVerEquipos').trigger("reloadGrid");
-        $('#somedialog-close').click();
+        $('#somedialog3-close').click();
     });
 
 });
@@ -127,7 +127,7 @@ $(document).ready(function(){
     <select id="idcomponente" name="idcomponente">
         <?php
         for ($i=0; $i < count($componentes); $i++) { 
-            echo "<option value=".$componentes[$i]->getId()." >".$componentes[$i]->getDetalle()."</option>";
+            echo "<option value=".$componentes[$i]->getId()." >".$componentes[$i]->getDetalle()." (".$componentes[$i]->getTipoComponente()->getDetalle().")</option>";
         }
         ?>
     </select>

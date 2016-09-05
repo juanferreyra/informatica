@@ -145,7 +145,7 @@ $numero = rand(1,26);
 								<ul class="cbp-hssubmenu">
 									<?php
 									if ($data->tienePermiso('VER_EQUIPOS')){
-										echo "<li><a href='http://192.168.253.102:8084/'><span>Sistema de stock</span></a></li>";
+										echo "<li><a href='http://192.168.253.102:8084/soporteInformaticaTrauma/'><span>Sistema de stock</span></a></li>";
 									}
 									?>
 								</ul>
