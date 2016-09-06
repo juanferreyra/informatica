@@ -6,7 +6,6 @@ function cargarOptionsComponentes(combo, datos)
     }
 }
 
-
 function validar()
 {
     if($('#idsector').val()=='')
