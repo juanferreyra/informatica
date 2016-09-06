@@ -105,6 +105,23 @@ $(document).ready(function(){
         $('#somedialog3-close').click();
     });
 
+    $('#compFiltrar').click(function(event){
+        event.preventDefault();
+        var det = $('#det_busq').val();
+        $('#idcomponente option').remove();
+        $.ajax({
+            type:'post',
+            dataType:'json',
+            url:'includes/ajaxFunctions/jsonComponentes.php',
+            data:{Det:det},
+            success: function(json)
+            {
+                componentes = json;
+                cargarOptionsComponentes($('#idcomponente'),componentes);
+            }
+        });
+    });
+
 });
 </script>
 <!--Titulo-->
@@ -122,6 +139,11 @@ $(document).ready(function(){
 </h2>
 <!-- /Titulo-->
 <hr>
+<form id="formFiltrcomponente">
+    <label>Buscar</label>
+    <input name="det_busq" id="det_busq" placeholder="Ej: Memoria, Intel i3">
+    <input class="button-secondary" name="compFiltrar" id="compFiltrar" type="submit" value="Filtrar"><br>
+</form>
 <form id="formAgrComponente">
     <label>Componente:</label>
     <select id="idcomponente" name="idcomponente">

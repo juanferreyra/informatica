@@ -1,3 +1,12 @@
+function cargarOptionsComponentes(combo, datos)
+{
+    for(i=0; i<datos.length; i++)
+    {
+        combo.append("<option value='"+datos[i].idcomponente+"'>"+ datos[i].componente +" ("+ datos[i].tipo_componente +")</option>");
+    }
+}
+
+
 function validar()
 {
     if($('#idsector').val()=='')

@@ -364,4 +364,39 @@ class ComponenteDatabaseLinker
         return $Componentes;
     }
 
+    function getCompFiltrada($nombre)
+    {
+        $query="SELECT
+                c.id as idcomponente,
+                c.detalle as componente,
+                ct.detalle as tipo_componente
+            FROM
+                componente c LEFT JOIN
+                componente_tipo ct ON(c.idcomponente_tipo = ct.id)
+            WHERE
+                (c.detalle like '%".$nombre."%' OR
+                ct.detalle like '%".$nombre."%') AND
+                c.habilitado = true;";
+
+        try {
+            $this->dbinformatica->conectar();
+            $this->dbinformatica->ejecutarQuery($query);
+        } catch (Exception $e) {
+            $this->dbinformatica->desconectar();
+            throw new Exception("No se pudo consultar los componentes", 201230);            
+        }
+
+        $componentes = array();
+
+        for ($f = 0; $f < $this->dbinformatica->querySize; $f++)
+        {
+            $result = $this->dbinformatica->fetchRow($query);
+            $componentes[] = $result;
+        }
+
+        $this->dbinformatica->desconectar();
+
+        return $componentes;
+    }
+
 }
