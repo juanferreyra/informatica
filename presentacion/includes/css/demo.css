@@ -178,6 +178,8 @@ p {
     border-radius: 4px;
     background: #1EAA70; /* this is a light blue */
     height: 40px;
+    float: none!important;
+    border: none;
  }
 
 .topright {
@@ -349,4 +351,18 @@ fieldset {
     color: #888;
     font-size: 16px;
     cursor:pointer;
+}
+
+.imgQr {
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/qr.png);
+    background-size: contain;
+}
+
+.imgEditEquipo {
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/edit-pc.png);
+    background-size: contain;
 }

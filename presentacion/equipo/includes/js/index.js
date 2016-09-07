@@ -171,8 +171,8 @@ $(document).ready(function(){
             for(var i=0;i < ids.length;i++)
             {
                 var cl = ids[i];
-                be = "<input class='button-secondary' type='button' value='Editar' onclick=\"javascript:verEquipo('"+cl+"');\" />";
-                be +="<input class='button-secondary' type='button' value='QR' onclick=\"javascript:verQR('"+cl+"');\" />";
+                be = "<input class='button-secondary imgEditEquipo' type='button' onclick=\"javascript:verEquipo('"+cl+"');\" />&nbsp;";
+                be +="<input class='button-secondary imgQr' type='button' onclick=\"javascript:verQR('"+cl+"');\" />";
                 jQuery("#jgVerEquipos").jqGrid('setRowData',ids[i],{act:be});
             }
         }

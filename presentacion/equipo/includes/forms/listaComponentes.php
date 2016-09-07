@@ -122,6 +122,11 @@ $(document).ready(function(){
         });
     });
 
+    $('#compNuevo').click(function(event){
+        event.preventDefault();
+        window.open('../componente/');
+    });
+
 });
 </script>
 <!--Titulo-->
@@ -140,11 +145,11 @@ $(document).ready(function(){
 <!-- /Titulo-->
 <hr>
 <form id="formFiltrcomponente">
-    <label>Buscar</label>
     <input name="det_busq" id="det_busq" placeholder="Ej: Memoria, Intel i3">
-    <input class="button-secondary" name="compFiltrar" id="compFiltrar" type="submit" value="Filtrar"><br>
+    <button name="compFiltrar" id="compFiltrar" class="button-secondary" ><span class="icon icon-search"></span></button><br>
 </form>
 <form id="formAgrComponente">
+    <button name="compNuevo" id="compNuevo" class="button-secondary" ><span class="icon icon-plus"> </span></button>
     <label>Componente:</label>
     <select id="idcomponente" name="idcomponente">
         <?php
@@ -153,7 +158,7 @@ $(document).ready(function(){
         }
         ?>
     </select>
-    <input type="submit" name="agregarComponente" id="agregarComponente" value="Agregar Componente" class="button-secondary" /><br/>
+    <button name="agregarComponente" id="agregarComponente" class="button-secondary" ><span class="icon icon-edit"> </span> </button><br/>
 </form>
 <div align="center">
     <table id="jqVerComponentesEnEquipo"></table>
